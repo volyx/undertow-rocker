@@ -31,6 +31,31 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>test.Main</mainClass>
+                    <arguments>
+                        <!--<argument>argument1</argument>-->
+                    </arguments>
+                    <systemProperties>
+                        <!--rocker.reload=true-->
+                        <systemProperty>
+                            <key>rocker.reload</key>
+                            <value>true</value>
+                        </systemProperty>
+                    </systemProperties>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <dependencies>
